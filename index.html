@@ -67,68 +67,6 @@
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock"
         }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why is Ryoko superior to my phone's Personal Hotspot?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Your smartphone hardware isn't designed for continuous routing. Using it as a hotspot causes battery drain and overheating. Ryoko is a dedicated device with long-range antennas and an 8-hour battery life."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are there hidden clauses, like annual contracts or roaming fines?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely none. Ryoko WI-FI delivers total cost predictability without any bureaucratic strings or long-term contracts. You are immune to roaming surprises."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "I am a beginner with technology. Will I be able to set this up abroad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! Ryoko uses Plug and Play engineering. Just press power and scan the QR code on the display to connect instantly. No technical skills required."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the actual global coverage and organic signal range of Ryoko?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ryoko works in 176+ countries including USA, Canada, and Australia by established primary connections with the strongest local networks available."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use this personal router with my entire family simultaneously?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can connect up to 10 devices simultaneously including smartphones, laptops, tablets, and smartwatches without performance degradation."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does the Ad Blocker work, and what is the threat of Hotel and Airport Wi-Fi?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Public Wi-Fi is often insecure. Ryoko creates a private, encrypted WPA connection with a native ad-blocker to prevent phishing and malware attacks."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What happens if I find that this doesn't work for my travel itineraries?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We offer a 30-day Money-Back Guarantee. If you're not satisfied with the device coverage or performance, you can get a full refund."
-            }
-          }
-        ]
       }
     ]
     </script>
@@ -136,7 +74,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Montserrat -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Font Awesome -->
@@ -165,64 +103,31 @@
         }
     </script>
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: #111827;
-        }
-
+        body { font-family: 'Montserrat', sans-serif; color: #111827; }
         .hero-pattern {
             background: radial-gradient(circle at 10% 50%, rgba(224, 240, 255, 0.7) 0%, transparent 40%),
                 radial-gradient(circle at 90% 70%, rgba(200, 220, 255, 0.5) 0%, transparent 50%);
             background-color: #fcfcfc;
         }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 800px;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .modal {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease-out;
-        }
-
-        .modal.active {
-            display: flex;
-            opacity: 1;
-        }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 800px; padding-top: 1rem; padding-bottom: 1rem; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .modal { display: none; opacity: 0; transition: opacity 0.3s ease-out; }
+        .modal.active { display: flex; opacity: 1; }
     </style>
 </head>
 
 <body class="bg-gray-50 flex flex-col min-h-screen">
 
-    <!-- 1. ALERT BAR (Centralizada Mobile em uma linha) -->
-    <div class="bg-brand-blue text-white text-center py-2.5 px-2 text-[8.5px] sm:text-[11px] font-bold tracking-wider w-full z-50">
+    <!-- 1. ALERT BAR (Single Line Mobile) -->
+    <div class="bg-brand-blue text-white text-center py-2 px-2 text-[8px] sm:text-[11px] font-bold tracking-wider w-full z-50">
         <div class="max-w-7xl mx-auto flex flex-row items-center justify-center gap-2 sm:gap-14 uppercase">
-            <div class="flex items-center gap-1.5 sm:gap-2">
+            <div class="flex items-center gap-1 sm:gap-2">
                 <i class="fa-solid fa-shield-check text-[10px] sm:text-sm"></i>
                 <span data-t="bar_guarantee" class="whitespace-nowrap">30-Day Money-Back Guarantee</span>
             </div>
-
-            <div class="flex items-center gap-1.5 sm:gap-2 bg-white/10 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">
+            <div class="flex items-center gap-1 sm:gap-2 bg-white/10 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full">
                 <i class="fa-solid fa-tag text-[10px] sm:text-sm"></i>
                 <span data-t="bar_discount" class="whitespace-nowrap">Get -70% Discount Today</span>
             </div>
@@ -237,15 +142,12 @@
                     R<span class="ml-1">Y</span><span class="ml-1">O</span><span class="ml-1">K</span><span class="ml-1">O</span>
                 </div>
             </div>
-
             <div class="flex items-center gap-6">
                 <div class="hidden lg:flex gap-8 text-sm font-semibold text-text-muted">
                     <a href="#features" class="hover:text-brand-blue transition" data-t="nav_features">Features</a>
                     <a href="#reviews" class="hover:text-brand-blue transition" data-t="nav_reviews">Reviews</a>
                     <a href="#faq" class="hover:text-brand-blue transition" data-t="nav_faq">FAQ</a>
                 </div>
-
-                <!-- Botão oculto no mobile (apenas desktop) -->
                 <div class="hidden lg:block">
                     <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
                         class="border-2 border-brand-blue text-brand-blue bg-white hover:bg-brand-blue hover:text-white px-6 py-2 rounded-md font-bold text-xs shadow-sm transition-all uppercase tracking-wide" data-t="cta_nav">
@@ -256,7 +158,7 @@
         </div>
     </nav>
 
-    <!-- 3. HERO SECTION -->
+    <!-- 3. HERO SECTION (Centralized Mobile) -->
     <header class="hero-pattern relative pt-16 pb-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-10 items-center">
@@ -264,13 +166,11 @@
                     <h1 class="text-4xl md:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] mb-6 text-gray-900" data-t="hero_h1">
                         Your World, Connected by Ryoko Wi-Fi
                     </h1>
-
                     <div class="block lg:hidden mb-8">
                         <img src="images/ryoko-portable-wifi-secure-travel-internet.webp"
                             alt="Ryoko Portable Wi-Fi" loading="lazy"
                             class="w-full max-w-[240px] mx-auto drop-shadow-2xl rounded-3xl">
                     </div>
-
                     <ul class="space-y-3 mb-8 text-[17px] font-semibold text-gray-800 text-left inline-block">
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-blue text-xl"></i>
@@ -285,14 +185,12 @@
                             <span data-t="hero_l3">No roaming fees worldwide</span>
                         </li>
                     </ul>
-
                     <div class="mt-4 lg:mt-8 w-full sm:w-auto">
                         <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
                             class="inline-flex items-center justify-center gap-3 bg-brand-blue hover:bg-brand-dark text-white w-full sm:w-auto px-10 py-4 rounded-md font-bold text-[15px] shadow-lg shadow-brand-blue/40 transition-transform transform hover:-translate-y-1 uppercase tracking-wide" data-t="cta_hero">
                             Order Now! <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
                     </div>
-
                     <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
                         <span class="text-[17px] text-gray-900 tracking-tight font-medium"><span data-t="review_num">10,825</span> <span data-t="review_txt">Reviews</span></span>
                         <div class="flex gap-[2px]">
@@ -311,7 +209,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="hidden lg:flex justify-center items-center relative">
                     <div class="absolute w-[400px] h-[400px] bg-brand-light rounded-full blur-[80px] -z-10"></div>
                     <img src="images/ryoko-portable-wifi-secure-travel-internet.webp"
@@ -322,7 +219,7 @@
         </div>
     </header>
 
-    <!-- 3.5. COUNTRY SELECTION (2 colunas no mobile) -->
+    <!-- 3.5. COUNTRY SELECTION (2 Columns Mobile) -->
     <section id="country-selection" class="py-20 bg-white border-b border-gray-100 text-center">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center max-w-2xl mx-auto mb-12">
@@ -330,7 +227,6 @@
                 <h3 class="text-3xl font-extrabold mt-3 text-gray-900 leading-tight" data-t="sel_h3">Select Your Travel Destination</h3>
                 <p class="text-text-muted mt-4 text-base" data-t="sel_p">We guarantee express delivery and optimized organic signals for the following regions:</p>
             </div>
-
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-10 max-w-6xl mx-auto">
                 <!-- Canada -->
                 <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/" class="group flex flex-col items-center bg-gray-50 hover:bg-white border border-gray-100 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
@@ -376,43 +272,40 @@
         </div>
     </section>
 
-    <!-- 4. FEATURES (Centralizado Mobile) -->
+    <!-- 4. FEATURES (Centralized Mobile) -->
     <section id="features" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900" data-t="feat_h2">Ryoko Has it All</h2>
-                <p class="text-[17px] text-text-muted leading-relaxed" data-t="feat_p">We've honed our expertise over the years. Ryoko is packed with all the features you've come to need and love.</p>
+                <p class="text-[17px] text-text-muted leading-relaxed" data-t="feat_p">We've honed our expertise over the years. Ryoko is packed with all the features you've come to need and love, and more!</p>
             </div>
-
             <div class="grid lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
                 <div class="space-y-10 text-center lg:text-right flex flex-col items-center lg:items-end">
                     <div class="flex flex-col lg:flex-row-reverse items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-ban"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f1_h4">Ad Blocker</h4>
-                            <p class="text-sm text-text-muted leading-relaxed" data-t="f1_p">Removes ads, blocks malware and phishing sites.</p>
+                            <p class="text-sm text-text-muted leading-relaxed" data-t="f1_p">Removes ads, blocks malware and phishing sites, to enhance your speed and safety online.</p>
                         </div>
                     </div>
                     <div class="flex flex-col lg:flex-row-reverse items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-mobile-screen-button"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f2_h4">Connect 10 Devices</h4>
-                            <p class="text-sm text-text-muted leading-relaxed" data-t="f2_p">Share the connection with friends and family too!</p>
+                            <p class="text-sm text-text-muted leading-relaxed" data-t="f2_p">From phones to laptops, tablets, and beyond. Share the connection with friends and family too!</p>
                         </div>
                     </div>
                     <div class="flex flex-col lg:flex-row-reverse items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-hand-holding"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f3_h4">Fits in Your Pocket</h4>
-                            <p class="text-sm text-text-muted leading-relaxed" data-t="f3_p">Leve e portátil para levar em qualquer lugar.</p>
+                            <p class="text-sm text-text-muted leading-relaxed" data-t="f3_p">Enjoy the freedom of internet on-the-go. Ryoko operates wire-free, is lightweight and portable!</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="hidden lg:flex justify-center items-center">
-                    <img src="images/ryoko-wifi-portable-router-features.webp" alt="Features" class="drop-shadow-xl max-h-[380px] object-contain">
+                    <img src="images/ryoko-wifi-portable-router-features.webp" alt="Features" class="drop-shadow-xl max-h-[380px] object-contain transform hover:scale-105">
                 </div>
-
                 <div class="space-y-10 text-center lg:text-left flex flex-col items-center lg:items-start">
                     <div class="flex flex-col lg:flex-row items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-file-invoice-dollar"></i></div>
@@ -425,7 +318,7 @@
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-battery-full"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f6_h4">Long-lasting Battery</h4>
-                            <p class="text-sm text-text-muted leading-relaxed" data-t="f6_p">Up to 8 hours of WiFi life.</p>
+                            <p class="text-sm text-text-muted leading-relaxed" data-t="f6_p">Up to 8 hours of WiFi life keeps you connected without interruptions.</p>
                         </div>
                     </div>
                     <div class="flex flex-col lg:flex-row items-center gap-4">
@@ -440,37 +333,36 @@
         </div>
     </section>
 
-    <!-- 5. REVIEWS (Centralizado Mobile) -->
+    <!-- 5. REVIEWS (Centralized Mobile) -->
     <section id="reviews" class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
+            <div class="max-w-2xl mx-auto mb-16">
                 <span class="text-brand-blue font-bold text-sm tracking-wider uppercase" data-t="rev_badge">More Travel, Less Logistics</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4" data-t="rev_h2">Loved by Thousands</h2>
-                <p class="text-text-muted text-lg" data-t="rev_p">Travelers and remote professionals have already bypassed the hidden fees of roaming.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4" data-t="rev_h2">The Group's Connection — And You Don't Drain Your Battery.</h2>
+                <p class="text-text-muted text-lg" data-t="rev_p">Travelers and remote professionals have already bypassed the hidden fees of roaming with Ryoko.</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col h-full items-center text-center md:items-start md:text-left">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full items-center text-center md:items-start md:text-left">
                     <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t1_p">"Simple, just turn it on and it works. Now I don't rely on insecure airport Wi-Fi."</p>
+                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t1_p">"As a project manager, I travel a lot for work. Simple, just turn it on and it works. Now I don't rely on insecure airport Wi-Fi."</p>
                     <div class="flex items-center gap-3 mt-auto pt-4 border-t w-full justify-center md:justify-start">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily C." class="w-10 h-10 rounded-full">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily C." class="w-10 h-10 rounded-full shadow-sm">
                         <div class="text-left"><p class="font-bold text-sm text-gray-900">Emily C. <span class="text-green-500 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p><p class="text-xs text-brand-blue">California, USA</p></div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col h-full items-center text-center md:items-start md:text-left">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full items-center text-center md:items-start md:text-left">
                     <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t2_p">"We were in a remote area. My phone lost signal, but Ryoko grabbed signal perfectly."</p>
+                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t2_p">"We were in a remote mountainous area. My phone lost signal, but Ryoko grabbed onto a distant tower perfectly."</p>
                     <div class="flex items-center gap-3 mt-auto pt-4 border-t w-full justify-center md:justify-start">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jack T." class="w-10 h-10 rounded-full">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jack T." class="w-10 h-10 rounded-full shadow-sm">
                         <div class="text-left"><p class="font-bold text-sm text-gray-900">Jack T. <span class="text-green-500 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p><p class="text-xs text-brand-blue">Queensland, AU</p></div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col h-full items-center text-center md:items-start md:text-left">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full items-center text-center md:items-start md:text-left">
                     <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t3_p">"Total peace of mind! It perfectly connects everyone's devices without roaming bills."</p>
+                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t3_p">"Total peace of mind! It perfectly connects everyone's devices without high roaming bills or stress."</p>
                     <div class="flex items-center gap-3 mt-auto pt-4 border-t w-full justify-center md:justify-start">
-                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Sophie M." class="w-10 h-10 rounded-full">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Sophie M." class="w-10 h-10 rounded-full shadow-sm">
                         <div class="text-left"><p class="font-bold text-sm text-gray-900">Sophie M. <span class="text-green-500 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p><p class="text-xs text-brand-blue">Ontario, CA</p></div>
                     </div>
                 </div>
@@ -478,84 +370,61 @@
         </div>
     </section>
 
-    <!-- 6. FAQ (RESTAURADO COMPLETO) -->
+    <!-- 6. FAQ (Full List Restored) -->
     <section id="faq" class="py-20 bg-white">
         <div class="max-w-3xl mx-auto px-4 md:px-8">
             <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-900" data-t="faq_h2">Frequently Asked Questions</h2>
-
             <div class="space-y-4">
-                <!-- FAQ 1 -->
                 <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
                     <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
-                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">1. Why is Ryoko superior to my phone's "Personal Hotspot"?</h4>
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4" data-t="q1">1. Why is Ryoko superior to my phone's "Personal Hotspot"?</h4>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
-                        <p class="leading-relaxed">Your smartphone hardware isn't designed for continuous routing. Using it as a hotspot causes battery drain and overheating. Ryoko is a dedicated device with long-range antennas and an 8-hour battery life.</p>
-                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t"><p>Your smartphone hardware isn't designed for continuous routing. Ryoko is a dedicated device with long-range antennas and an 8-hour battery life.</p></div>
                 </div>
-                <!-- FAQ 2 -->
                 <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
                     <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
-                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">2. Are there hidden clauses, like annual contracts or roaming fines?</h4>
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4" data-t="q2">2. Are there hidden clauses, annual contracts or roaming fines?</h4>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
-                        <p class="leading-relaxed">Absolutely none. Ryoko WI-FI delivers total cost predictability without any bureaucratic strings or long-term contracts. You are immune to roaming surprises.</p>
-                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t"><p>Absolutely none. Ryoko WI-FI delivers total cost predictability without any bureaucratic strings or long-term contracts.</p></div>
                 </div>
-                <!-- FAQ 3 -->
                 <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
                     <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
-                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">3. I am a beginner with technology. Will I be able to set this up abroad?</h4>
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4" data-t="q3">3. I am a beginner with technology. Will I be able to set this up abroad?</h4>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
-                        <p class="leading-relaxed">Yes! Ryoko uses Plug and Play engineering. Just press power and scan the QR code on the display to connect instantly. No technical skills required.</p>
-                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t"><p>Yes! Ryoko uses Plug and Play engineering. Just press power and scan the QR code to connect instantly.</p></div>
                 </div>
-                <!-- FAQ 4 -->
                 <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
                     <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
-                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">4. What is the actual global coverage and organic signal range of Ryoko?</h4>
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4" data-t="q4">4. What is the actual global coverage and organic signal range?</h4>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
-                        <p class="leading-relaxed">Ryoko works in 176+ countries including USA, Canada, and Australia by established primary connections with the strongest local networks available.</p>
-                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t"><p>Ryoko works in 176+ countries by establishing primary connections with the strongest local networks available.</p></div>
                 </div>
-                <!-- FAQ 5 -->
                 <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
                     <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
-                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">5. Can I use this personal router with my entire family simultaneously?</h4>
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4" data-t="q5">5. Can I use this personal router with my family simultaneously?</h4>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
-                        <p class="leading-relaxed">Yes, you can connect up to 10 devices simultaneously including smartphones, laptops, tablets, and smartwatches without performance degradation.</p>
-                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t"><p>Yes, you can connect up to 10 devices including smartphones, laptops, tablets, and smartwatches.</p></div>
                 </div>
-                <!-- FAQ 6 -->
                 <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
                     <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
-                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">6. How does the Ad Blocker work, and what is the threat of Hotel and Airport Wi-Fi?</h4>
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4" data-t="q6">6. How does the Ad Blocker work?</h4>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
-                        <p class="leading-relaxed">Public Wi-Fi is often insecure. Ryoko creates a private, encrypted WPA connection with a native ad-blocker to prevent phishing and malware attacks.</p>
-                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t"><p>Public Wi-Fi is insecure. Ryoko creates a private, encrypted WPA connection with a native ad-blocker to prevent phishing.</p></div>
                 </div>
-                <!-- FAQ 7 -->
                 <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
                     <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
-                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">7. What happens if I find that this doesn't work for my travel itineraries?</h4>
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4" data-t="q7">7. What happens if this doesn't work for my travel itineraries?</h4>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
-                        <p class="leading-relaxed">We offer a 30-day Money-Back Guarantee. If you're not satisfied with the device coverage or performance, you can get a full refund.</p>
-                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t"><p>We offer a 30-day Money-Back Guarantee. If you're not satisfied, you can get a full refund.</p></div>
                 </div>
             </div>
-
             <div class="mt-14 text-center">
                 <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
                     class="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3 rounded-md font-bold shadow-sm transition-colors uppercase tracking-wide inline-block" data-t="cta_faq">
@@ -565,49 +434,64 @@
         </div>
     </section>
 
-    <!-- 7. FOOTER -->
+    <!-- 7. FOOTER (With Restored Disclaimer & Distributor Tag) -->
     <footer class="bg-[#111827] text-gray-400 py-16 mt-auto text-center">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="font-extrabold text-2xl tracking-[0.2em] text-white mb-8">R Y O K O</div>
+            <div class="font-extrabold text-2xl tracking-[0.2em] text-white mb-4 uppercase">Ryoko</div>
+            
+            <!-- Authorized Distributor Tag -->
+            <p class="text-[10px] text-gray-500 font-bold tracking-widest mb-8 uppercase" data-t="auth_tag">Authorized Independent Distributor</p>
+
             <div class="flex flex-wrap justify-center gap-6 sm:gap-8 text-[14px] font-medium mb-12">
                 <a href="#" onclick="openModal('privacyModal'); return false;" class="hover:text-brand-light transition" data-t="f_privacy">Privacy Policy</a>
                 <a href="#" onclick="openModal('termsModal'); return false;" class="hover:text-brand-light transition" data-t="f_terms">Terms of Service</a>
                 <a href="#" onclick="openModal('returnsModal'); return false;" class="hover:text-brand-light transition" data-t="f_refunds">Refunds & Guarantees</a>
             </div>
-            <p class="text-[10px] opacity-50 px-4">&copy; 2026 Certified Online Promoter. All rights reserved.</p>
+
+            <!-- Full Disclaimer Restored -->
+            <div class="max-w-4xl mx-auto space-y-6 text-[10px] text-gray-500 text-center md:text-justify leading-relaxed px-4 opacity-60">
+                <p><strong>ADVERTISING AND AFFILIATE COMPLIANCE NOTICE:</strong> Our website operates strictly as an
+                    <strong>Independent Distributor & Affiliate Partner Website</strong>, developed primarily in an
+                    editorial/advertorial fashion. We are not the original manufacturer of the brand described, nor
+                    absolute patent holders of the Ryoko Portable Wi-Fi. The links for the purchasing process will
+                    direct you directly to the protected third-party platforms of our authorized supplier.</p>
+                <p>All statements and user testimonials serve purely as a realistic illustration of use. technological efficiency depends directly on the infrastructure of third-party antennas, weather conditions, and possible governmental maneuvers in 176Mapped countries.</p>
+                <p class="text-center mt-8 pt-8 border-t border-gray-800 border-opacity-30">
+                    &copy; 2026 Certified Online Promoter. This site is NOT supported, endorsed, or directly administered by Facebook Inc., Meta, Instagram
+                    Inc., or Alphabet Inc. / Google LLC.
+                </p>
+            </div>
         </div>
     </footer>
 
-    <!-- MODALS (RESTAURADO COMPLETO) -->
+    <!-- MODALS (Full Content Restored) -->
     <div id="privacyModal" class="modal fixed inset-0 z-50 bg-[#111827]/85 backdrop-blur-md justify-center items-center p-4">
         <div class="bg-white rounded-2xl w-full max-w-[800px] max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
             <div class="p-6 border-b flex justify-between items-center bg-gray-50">
-                <div class="flex items-center gap-3 text-gray-900"><i class="fa-solid fa-shield-halved text-brand-blue text-xl"></i><h3 class="font-extrabold text-xl tracking-tight">Privacy Policy</h3></div>
-                <button onclick="closeModals()" class="text-gray-400 hover:text-red-500 transition-all"><i class="fa-solid fa-xmark text-xl"></i></button>
+                <div class="flex items-center gap-3 text-gray-900"><i class="fa-solid fa-shield-halved text-brand-blue text-xl"></i><h3 class="font-extrabold text-xl tracking-tight">Data Privacy Policy</h3></div>
+                <button onclick="closeModals()" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
             <div class="p-6 md:p-8 overflow-y-auto text-gray-600 text-[15px] leading-relaxed space-y-4">
-                <p>Your privacy is mandatory across all our operations aligned with European (GDPR), California (CCPA), and International General Laws.</p>
-                <p><strong>Article 1: Extracted Information</strong> - We use tracking tools (e.g., Google Analytics) to monitor anonymous metric traffic. Submissions involving Banking Data are encrypted through our official supplier.</p>
-                <p><strong>Article 2: Re-Marketing</strong> - Temporary cookies memorize your clicks to optimize digital advertising bids.</p>
+                <p>Your privacy is mandatory across all our operations aligned with GDPR and CCPA.</p>
+                <h4 class="font-bold text-gray-900">Article 1: Models of Extracted Information</h4>
+                <p>We use tools like Google Analytics to track anonymous metric traffic. All banking data is securely encrypted by the Primary Supplier.</p>
             </div>
             <div class="p-4 bg-gray-50 border-t flex justify-end">
                 <button onclick="closeModals()" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-black transition">Understood</button>
             </div>
         </div>
     </div>
-
+    
     <div id="termsModal" class="modal fixed inset-0 z-50 bg-[#111827]/85 backdrop-blur-md justify-center items-center p-4">
         <div class="bg-white rounded-2xl w-full max-w-[800px] max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
             <div class="p-6 border-b flex justify-between items-center bg-gray-50">
                 <div class="flex items-center gap-3 text-gray-900"><i class="fa-solid fa-file-contract text-brand-blue text-xl"></i><h3 class="font-extrabold text-xl tracking-tight">Terms of Service</h3></div>
-                <button onclick="closeModals()" class="text-gray-400 hover:text-red-500 transition-all"><i class="fa-solid fa-xmark text-xl"></i></button>
+                <button onclick="closeModals()" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
             <div class="p-6 md:p-8 overflow-y-auto text-gray-600 text-[15px] leading-relaxed">
-                <p>We act solely for the qualified transfer of information regarding Ryoko. All financial transactions redirect to the original producer, who holds all logistical legal burdens for freight or technical faults.</p>
+                <p>We act solely for the qualified transfer of information regarding Ryoko. All subsequent financial transactions are responsibility of the manufacturer.</p>
             </div>
-            <div class="p-4 bg-gray-50 border-t flex justify-end">
-                <button onclick="closeModals()" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-black transition">I Agree</button>
-            </div>
+            <div class="p-4 bg-gray-50 border-t flex justify-end"><button onclick="closeModals()" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-black transition">I Agree</button></div>
         </div>
     </div>
 
@@ -615,14 +499,12 @@
         <div class="bg-white rounded-2xl w-full max-w-[800px] max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
             <div class="p-6 border-b flex justify-between items-center bg-gray-50">
                 <div class="flex items-center gap-3 text-gray-900"><i class="fa-solid fa-truck-fast text-brand-blue text-xl"></i><h3 class="font-extrabold text-xl tracking-tight">Returns Policy</h3></div>
-                <button onclick="closeModals()" class="text-gray-400 hover:text-red-500 transition-all"><i class="fa-solid fa-xmark text-xl"></i></button>
+                <button onclick="closeModals()" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
             <div class="p-6 md:p-8 overflow-y-auto text-gray-600 text-[15px] leading-relaxed">
-                <p>We uphold international consumer policies by granting 30 Days tracked rigorously from the official physical delivery date. Returns must be communicated through verified support channels.</p>
+                <p>We grant 30 Days tracked rigorously from the physical delivery date for full refunds via verified support channels.</p>
             </div>
-            <div class="p-4 bg-gray-50 border-t flex justify-end">
-                <button onclick="closeModals()" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-black transition">Go Back</button>
-            </div>
+            <div class="p-4 bg-gray-50 border-t flex justify-end"><button onclick="closeModals()" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-black transition">Go Back</button></div>
         </div>
     </div>
 
@@ -635,18 +517,14 @@
                 'hero_h1': 'Seu Mundo, Conectado pelo Wi-Fi Ryoko',
                 'hero_l1': 'Internet segura em qualquer lugar', 'hero_l2': 'Sem contratos', 'hero_l3': 'Sem taxas de roaming',
                 'cta_hero': 'Peça Agora!', 'review_num': '10.825', 'review_txt': 'Avaliações',
-                'sel_badge': 'Cobertura Premium', 'sel_h3': 'Selecione Seu Destino', 'sel_p': 'Garantimos entrega expressa e sinal otimizado para as seguintes regiões:',
+                'sel_badge': 'Cobertura Premium', 'sel_h3': 'Selecione Seu Destino', 'sel_p': 'Entrega expressa e sinal otimizado para estas regiões:',
                 'sig_active': 'Sinal Ativo', 'country_global': 'Global / Outros', 'sig_176': '176+ Países',
-                'feat_h2': 'Ryoko Tem Tudo', 'feat_p': 'O Ryoko tem todos os recursos que você precisa para viajar com segurança.',
-                'f1_h4': 'Bloqueador', 'f1_p': 'Remove anúncios e bloqueia sites maliciosos.',
-                'f2_h4': '10 Dispositivos', 'f2_p': 'Compartilhe a conexão com toda a sua família!',
-                'f3_h4': 'Portátil', 'f3_p': 'Cabe no bolso e funciona em qualquer lugar.',
-                'f5_h4': 'Economia', 'f5_p': 'Otimização inteligente para máxima velocidade.',
-                'f6_h4': 'Bateria', 'f6_p': 'Até 8 horas de uso ininterrupto.',
-                'f7_h4': 'Velocidade', 'f7_p': 'Conexão estável de até 150Mb/s.',
-                'rev_badge': 'Diga adeus ao Roaming', 'rev_h2': 'Amado por Milhares',
-                'verified': 'Verificado', 'faq_h2': 'Perguntas Frequentes', 'cta_faq': 'PROTEGER MINHA VIAGEM AGORA',
-                'f_privacy': 'Política de Privacidade', 'f_terms': 'Termos de Serviço', 'f_refunds': 'Garantias'
+                'feat_h2': 'Ryoko Tem Tudo', 'feat_p': 'A Ryoko tem tudo o que você precisa para se manter conectado com segurança.',
+                'f1_h4': 'Bloqueador', 'f2_h4': '10 Dispositivos', 'f3_h4': 'Portátil', 'f5_h4': 'Economia', 'f6_h4': 'Bateria', 'f7_h4': 'Alta Velocidade',
+                'rev_badge': 'Diga adeus ao Roaming', 'rev_h2': 'Amado por Milhares', 'verified': 'Verificado',
+                'faq_h2': 'Perguntas Frequentes', 'cta_faq': 'PROTEGER MINHA VIAGEM AGORA',
+                'f_privacy': 'Privacidade', 'f_terms': 'Termos', 'f_refunds': 'Garantias', 'auth_tag': 'Distribuidor Independente Autorizado',
+                'q1': '1. Por que Ryoko é superior ao hotspot do celular?', 'q2': '2. Existem taxas ou contratos escondidos?', 'q3': '3. Sou iniciante, vou conseguir configurar?', 'q7': '7. E se não funcionar no meu roteiro?'
             }
         };
 
@@ -679,7 +557,6 @@
 
         window.onclick = function (event) { if (event.target.classList.contains('modal')) closeModals(); }
         document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeModals(); });
-        
         window.onload = applyTranslation;
     </script>
 </body>
