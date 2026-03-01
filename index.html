@@ -136,7 +136,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Font Awesome -->
@@ -190,7 +190,7 @@
         }
 
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 800px;
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
@@ -214,15 +214,15 @@
 
 <body class="bg-gray-50 flex flex-col min-h-screen">
 
-    <!-- 1. ALERT BAR -->
-    <div class="bg-brand-blue text-white text-center py-2 px-2 text-[8px] sm:text-[11px] font-bold tracking-wider w-full z-50">
+    <!-- 1. ALERT BAR (Centralizada Mobile em uma linha) -->
+    <div class="bg-brand-blue text-white text-center py-2.5 px-2 text-[8.5px] sm:text-[11px] font-bold tracking-wider w-full z-50">
         <div class="max-w-7xl mx-auto flex flex-row items-center justify-center gap-2 sm:gap-14 uppercase">
-            <div class="flex items-center gap-1 sm:gap-2">
+            <div class="flex items-center gap-1.5 sm:gap-2">
                 <i class="fa-solid fa-shield-check text-[10px] sm:text-sm"></i>
                 <span data-t="bar_guarantee" class="whitespace-nowrap">30-Day Money-Back Guarantee</span>
             </div>
 
-            <div class="flex items-center gap-1 sm:gap-2 bg-white/10 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full">
+            <div class="flex items-center gap-1.5 sm:gap-2 bg-white/10 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">
                 <i class="fa-solid fa-tag text-[10px] sm:text-sm"></i>
                 <span data-t="bar_discount" class="whitespace-nowrap">Get -70% Discount Today</span>
             </div>
@@ -231,11 +231,10 @@
 
     <!-- 2. NAVBAR -->
     <nav class="glass sticky top-0 z-40 px-4 py-4 w-full shadow-sm">
-        <div class="max-w-7xl mx-auto flex flex-col xl:flex-row justify-between items-center gap-4">
+        <div class="max-w-7xl mx-auto flex flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-6">
                 <div class="font-extrabold text-2xl tracking-[0.2em] text-black">
-                    R<span class="ml-1">Y</span><span class="ml-1">O</span><span class="ml-1">K</span><span
-                        class="ml-1">O</span>
+                    R<span class="ml-1">Y</span><span class="ml-1">O</span><span class="ml-1">K</span><span class="ml-1">O</span>
                 </div>
             </div>
 
@@ -246,7 +245,8 @@
                     <a href="#faq" class="hover:text-brand-blue transition" data-t="nav_faq">FAQ</a>
                 </div>
 
-                <div class="flex flex-col items-center">
+                <!-- Botão oculto no mobile (apenas desktop) -->
+                <div class="hidden lg:block">
                     <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
                         class="border-2 border-brand-blue text-brand-blue bg-white hover:bg-brand-blue hover:text-white px-6 py-2 rounded-md font-bold text-xs shadow-sm transition-all uppercase tracking-wide" data-t="cta_nav">
                         Order Now!
@@ -260,10 +260,8 @@
     <header class="hero-pattern relative pt-16 pb-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-10 items-center">
-                <!-- Alinhamento proporcional mobile: text-center lg:text-left -->
                 <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
-                    <h1
-                        class="text-4xl md:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] mb-6 text-gray-900" data-t="hero_h1">
+                    <h1 class="text-4xl md:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] mb-6 text-gray-900" data-t="hero_h1">
                         Your World, Connected by Ryoko Wi-Fi
                     </h1>
 
@@ -273,7 +271,7 @@
                             class="w-full max-w-[240px] mx-auto drop-shadow-2xl rounded-3xl">
                     </div>
 
-                    <ul class="space-y-3 mb-8 text-[17px] font-semibold text-gray-800 inline-block text-left">
+                    <ul class="space-y-3 mb-8 text-[17px] font-semibold text-gray-800 text-left inline-block">
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-blue text-xl"></i>
                             <span data-t="hero_l1">Secure internet anywhere</span>
@@ -324,7 +322,7 @@
         </div>
     </header>
 
-    <!-- 3.5. COUNTRY SELECTION -->
+    <!-- 3.5. COUNTRY SELECTION (2 colunas no mobile) -->
     <section id="country-selection" class="py-20 bg-white border-b border-gray-100 text-center">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center max-w-2xl mx-auto mb-12">
@@ -334,54 +332,51 @@
             </div>
 
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-10 max-w-6xl mx-auto">
-                <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
-                    class="group flex flex-col items-center bg-gray-50 hover:bg-white border border-gray-100 hover:border-brand-blue/40 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+                <!-- Canada -->
+                <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/" class="group flex flex-col items-center bg-gray-50 hover:bg-white border border-gray-100 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 sm:border-4 border-white shadow-md mb-4 bg-white">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="Canada" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="Canada" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="font-extrabold text-sm sm:text-lg text-gray-900 group-hover:text-brand-blue transition-colors">Canada</h4>
+                    <h4 class="font-extrabold text-sm sm:text-lg text-gray-900 group-hover:text-brand-blue">Canada</h4>
                     <div class="flex items-center justify-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] text-green-600 font-black uppercase mt-2 tracking-wide">
-                        <i class="fa-solid fa-satellite-dish text-[8px] sm:text-[10px] animate-pulse"></i> <span data-t="sig_active">Signal Active</span>
+                        <i class="fa-solid fa-satellite-dish text-[8px] animate-pulse"></i> <span data-t="sig_active">Signal Active</span>
                     </div>
                 </a>
-
-                <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
-                    class="group flex flex-col items-center bg-gray-50 hover:bg-white border border-gray-100 hover:border-brand-blue/40 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+                <!-- USA -->
+                <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/" class="group flex flex-col items-center bg-gray-50 hover:bg-white border border-gray-100 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 sm:border-4 border-white shadow-md mb-4 bg-white">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="United States" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="United States" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="font-extrabold text-sm sm:text-lg text-gray-900 group-hover:text-brand-blue transition-colors">United States</h4>
+                    <h4 class="font-extrabold text-sm sm:text-lg text-gray-900 group-hover:text-brand-blue">USA</h4>
                     <div class="flex items-center justify-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] text-green-600 font-black uppercase mt-2 tracking-wide">
-                        <i class="fa-solid fa-satellite-dish text-[8px] sm:text-[10px] animate-pulse"></i> <span data-t="sig_active">Signal Active</span>
+                        <i class="fa-solid fa-satellite-dish text-[8px] animate-pulse"></i> <span data-t="sig_active">Signal Active</span>
                     </div>
                 </a>
-
-                <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
-                    class="group flex flex-col items-center bg-gray-50 hover:bg-white border border-gray-100 hover:border-brand-blue/40 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+                <!-- Australia -->
+                <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/" class="group flex flex-col items-center bg-gray-50 hover:bg-white border border-gray-100 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 sm:border-4 border-white shadow-md mb-4 bg-white">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg" alt="Australia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg" alt="Australia" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="font-extrabold text-sm sm:text-lg text-gray-900 group-hover:text-brand-blue transition-colors">Australia</h4>
+                    <h4 class="font-extrabold text-sm sm:text-lg text-gray-900 group-hover:text-brand-blue">Australia</h4>
                     <div class="flex items-center justify-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] text-green-600 font-black uppercase mt-2 tracking-wide">
-                        <i class="fa-solid fa-satellite-dish text-[8px] sm:text-[10px] animate-pulse"></i> <span data-t="sig_active">Signal Active</span>
+                        <i class="fa-solid fa-satellite-dish text-[8px] animate-pulse"></i> <span data-t="sig_active">Signal Active</span>
                     </div>
                 </a>
-
-                <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
-                    class="group flex flex-col items-center bg-brand-blue/5 hover:bg-white border-2 border-brand-blue/20 hover:border-brand-blue p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+                <!-- Global -->
+                <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/" class="group flex flex-col items-center bg-brand-blue/5 hover:bg-white border-2 border-brand-blue/20 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center border-2 sm:border-4 border-white shadow-md mb-4 bg-brand-blue text-white">
-                        <i class="fa-solid fa-earth-americas text-xl sm:text-2xl group-hover:rotate-12 transition-transform duration-500"></i>
+                        <i class="fa-solid fa-earth-americas text-xl sm:text-2xl group-hover:rotate-12 transition-transform"></i>
                     </div>
-                    <h4 class="font-extrabold text-sm sm:text-lg text-gray-900 group-hover:text-brand-blue transition-colors" data-t="country_global">Global / Other</h4>
+                    <h4 class="font-extrabold text-sm sm:text-lg text-gray-900 group-hover:text-brand-blue" data-t="country_global">Global / Other</h4>
                     <div class="flex items-center justify-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] text-brand-blue font-black uppercase mt-2 tracking-wide">
-                        <i class="fa-solid fa-globe text-[8px] sm:text-[10px] animate-pulse"></i> <span data-t="sig_176">176+ Countries</span>
+                        <i class="fa-solid fa-globe text-[8px] animate-pulse"></i> <span data-t="sig_176">176+ Countries</span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 4. FEATURES -->
+    <!-- 4. FEATURES (Centralizado Mobile) -->
     <section id="features" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -390,22 +385,22 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
-                <div class="space-y-10 lg:text-right text-center lg:text-right flex flex-col items-center lg:items-end">
-                    <div class="flex flex-col lg:flex-row-reverse items-center lg:items-center gap-4">
+                <div class="space-y-10 text-center lg:text-right flex flex-col items-center lg:items-end">
+                    <div class="flex flex-col lg:flex-row-reverse items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-ban"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f1_h4">Ad Blocker</h4>
                             <p class="text-sm text-text-muted leading-relaxed" data-t="f1_p">Removes ads, blocks malware and phishing sites.</p>
                         </div>
                     </div>
-                    <div class="flex flex-col lg:flex-row-reverse items-center lg:items-center gap-4">
+                    <div class="flex flex-col lg:flex-row-reverse items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-mobile-screen-button"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f2_h4">Connect 10 Devices</h4>
                             <p class="text-sm text-text-muted leading-relaxed" data-t="f2_p">Share the connection with friends and family too!</p>
                         </div>
                     </div>
-                    <div class="flex flex-col lg:flex-row-reverse items-center lg:items-center gap-4">
+                    <div class="flex flex-col lg:flex-row-reverse items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-hand-holding"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f3_h4">Fits in Your Pocket</h4>
@@ -415,25 +410,25 @@
                 </div>
 
                 <div class="hidden lg:flex justify-center items-center">
-                    <img src="images/ryoko-wifi-portable-router-features.webp" alt="Features" class="drop-shadow-xl max-h-[380px] object-contain transform hover:scale-105 transition-transform duration-500">
+                    <img src="images/ryoko-wifi-portable-router-features.webp" alt="Features" class="drop-shadow-xl max-h-[380px] object-contain">
                 </div>
 
                 <div class="space-y-10 text-center lg:text-left flex flex-col items-center lg:items-start">
-                    <div class="flex flex-col lg:flex-row items-center lg:items-center gap-4">
+                    <div class="flex flex-col lg:flex-row items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f5_h4">Data Saver</h4>
                             <p class="text-sm text-text-muted leading-relaxed" data-t="f5_p">Get high-speed Internet with data efficiency optimization.</p>
                         </div>
                     </div>
-                    <div class="flex flex-col lg:flex-row items-center lg:items-center gap-4">
+                    <div class="flex flex-col lg:flex-row items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-battery-full"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f6_h4">Long-lasting Battery</h4>
                             <p class="text-sm text-text-muted leading-relaxed" data-t="f6_p">Up to 8 hours of WiFi life.</p>
                         </div>
                     </div>
-                    <div class="flex flex-col lg:flex-row items-center lg:items-center gap-4">
+                    <div class="flex flex-col lg:flex-row items-center gap-4">
                         <div class="text-brand-blue text-3xl"><i class="fa-solid fa-signal"></i></div>
                         <div>
                             <h4 class="font-bold text-[17px] mb-1 text-gray-900" data-t="f7_h4">High-speed Interface</h4>
@@ -445,7 +440,7 @@
         </div>
     </section>
 
-    <!-- 5. SOCIAL PROOF / REVIEWS -->
+    <!-- 5. REVIEWS (Centralizado Mobile) -->
     <section id="reviews" class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -455,58 +450,112 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full items-center text-center md:items-start md:text-left">
+                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col h-full items-center text-center md:items-start md:text-left">
                     <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t1_p">"Simple, just turn it on and it works. Now I don't rely on insecure airport Wi-Fi."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4 border-t border-gray-50 w-full justify-center md:justify-start">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily C." class="w-10 h-10 rounded-full object-cover shadow-sm">
-                        <div class="text-left">
-                            <p class="font-bold text-sm text-gray-900">Emily C. <span class="text-green-500 ml-1 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p>
-                            <p class="text-xs text-brand-blue">California, USA</p>
-                        </div>
+                    <div class="flex items-center gap-3 mt-auto pt-4 border-t w-full justify-center md:justify-start">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily C." class="w-10 h-10 rounded-full">
+                        <div class="text-left"><p class="font-bold text-sm text-gray-900">Emily C. <span class="text-green-500 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p><p class="text-xs text-brand-blue">California, USA</p></div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full items-center text-center md:items-start md:text-left">
+                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col h-full items-center text-center md:items-start md:text-left">
                     <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t2_p">"We were in a remote area. My phone lost all signal, but Ryoko grabbed signal perfectly."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4 border-t border-gray-50 w-full justify-center md:justify-start">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jack T." class="w-10 h-10 rounded-full object-cover shadow-sm">
-                        <div class="text-left">
-                            <p class="font-bold text-sm text-gray-900">Jack T. <span class="text-green-500 ml-1 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p>
-                            <p class="text-xs text-brand-blue">Queensland, AU</p>
-                        </div>
+                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t2_p">"We were in a remote area. My phone lost signal, but Ryoko grabbed signal perfectly."</p>
+                    <div class="flex items-center gap-3 mt-auto pt-4 border-t w-full justify-center md:justify-start">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jack T." class="w-10 h-10 rounded-full">
+                        <div class="text-left"><p class="font-bold text-sm text-gray-900">Jack T. <span class="text-green-500 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p><p class="text-xs text-brand-blue">Queensland, AU</p></div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full items-center text-center md:items-start md:text-left">
+                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col h-full items-center text-center md:items-start md:text-left">
                     <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t3_p">"Total peace of mind! It perfectly connects everyone's devices without high roaming bills."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-4 border-t border-gray-50 w-full justify-center md:justify-start">
-                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Sophie M." class="w-10 h-10 rounded-full object-cover shadow-sm">
-                        <div class="text-left">
-                            <p class="font-bold text-sm text-gray-900">Sophie M. <span class="text-green-500 ml-1 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p>
-                            <p class="text-xs text-brand-blue">Ontario, CA</p>
-                        </div>
+                    <p class="text-text-muted italic text-sm mb-6 leading-relaxed flex-grow" data-t="t3_p">"Total peace of mind! It perfectly connects everyone's devices without roaming bills."</p>
+                    <div class="flex items-center gap-3 mt-auto pt-4 border-t w-full justify-center md:justify-start">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Sophie M." class="w-10 h-10 rounded-full">
+                        <div class="text-left"><p class="font-bold text-sm text-gray-900">Sophie M. <span class="text-green-500 text-xs"><i class="fa-solid fa-circle-check"></i> <span data-t="verified">Verified</span></span></p><p class="text-xs text-brand-blue">Ontario, CA</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. FAQ -->
+    <!-- 6. FAQ (RESTAURADO COMPLETO) -->
     <section id="faq" class="py-20 bg-white">
         <div class="max-w-3xl mx-auto px-4 md:px-8">
             <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-900" data-t="faq_h2">Frequently Asked Questions</h2>
+
             <div class="space-y-4">
+                <!-- FAQ 1 -->
                 <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
                     <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
-                        <h4 class="font-bold text-[16px] text-gray-900 pr-4" data-t="q1">1. Why is Ryoko superior to my phone's "Personal Hotspot"?</h4>
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">1. Why is Ryoko superior to my phone's "Personal Hotspot"?</h4>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t border-gray-100">
-                        <p class="leading-relaxed" data-t="a1">Your smartphone wasn't designed as a continuous router. Ryoko provides a dedicated, powerful antenna and saves your phone's battery life.</p>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
+                        <p class="leading-relaxed">Your smartphone hardware isn't designed for continuous routing. Using it as a hotspot causes battery drain and overheating. Ryoko is a dedicated device with long-range antennas and an 8-hour battery life.</p>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
+                    <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">2. Are there hidden clauses, like annual contracts or roaming fines?</h4>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
+                        <p class="leading-relaxed">Absolutely none. Ryoko WI-FI delivers total cost predictability without any bureaucratic strings or long-term contracts. You are immune to roaming surprises.</p>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
+                    <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">3. I am a beginner with technology. Will I be able to set this up abroad?</h4>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
+                        <p class="leading-relaxed">Yes! Ryoko uses Plug and Play engineering. Just press power and scan the QR code on the display to connect instantly. No technical skills required.</p>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
+                    <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">4. What is the actual global coverage and organic signal range of Ryoko?</h4>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
+                        <p class="leading-relaxed">Ryoko works in 176+ countries including USA, Canada, and Australia by established primary connections with the strongest local networks available.</p>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
+                    <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">5. Can I use this personal router with my entire family simultaneously?</h4>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
+                        <p class="leading-relaxed">Yes, you can connect up to 10 devices simultaneously including smartphones, laptops, tablets, and smartwatches without performance degradation.</p>
+                    </div>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
+                    <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">6. How does the Ad Blocker work, and what is the threat of Hotel and Airport Wi-Fi?</h4>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
+                        <p class="leading-relaxed">Public Wi-Fi is often insecure. Ryoko creates a private, encrypted WPA connection with a native ad-blocker to prevent phishing and malware attacks.</p>
+                    </div>
+                </div>
+                <!-- FAQ 7 -->
+                <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden cursor-pointer shadow-sm">
+                    <div class="faq-question flex justify-between items-center p-5 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <h4 class="font-bold text-[16px] text-gray-900 pr-4">7. What happens if I find that this doesn't work for my travel itineraries?</h4>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-blue text-sm transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 text-text-muted text-sm bg-gray-50 border-t">
+                        <p class="leading-relaxed">We offer a 30-day Money-Back Guarantee. If you're not satisfied with the device coverage or performance, you can get a full refund.</p>
                     </div>
                 </div>
             </div>
+
             <div class="mt-14 text-center">
                 <a href="https://www.clickrtrckr.com/2LXFFTP/4GRH4B9/"
                     class="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3 rounded-md font-bold shadow-sm transition-colors uppercase tracking-wide inline-block" data-t="cta_faq">
@@ -519,28 +568,60 @@
     <!-- 7. FOOTER -->
     <footer class="bg-[#111827] text-gray-400 py-16 mt-auto text-center">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="font-extrabold text-2xl tracking-[0.2em] text-white mb-8 uppercase">Ryoko</div>
+            <div class="font-extrabold text-2xl tracking-[0.2em] text-white mb-8">R Y O K O</div>
             <div class="flex flex-wrap justify-center gap-6 sm:gap-8 text-[14px] font-medium mb-12">
                 <a href="#" onclick="openModal('privacyModal'); return false;" class="hover:text-brand-light transition" data-t="f_privacy">Privacy Policy</a>
                 <a href="#" onclick="openModal('termsModal'); return false;" class="hover:text-brand-light transition" data-t="f_terms">Terms of Service</a>
                 <a href="#" onclick="openModal('returnsModal'); return false;" class="hover:text-brand-light transition" data-t="f_refunds">Refunds & Guarantees</a>
             </div>
-            <p class="text-[10px] opacity-50">&copy; 2026 Certified Online Promoter. All rights reserved.</p>
+            <p class="text-[10px] opacity-50 px-4">&copy; 2026 Certified Online Promoter. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- MODALS -->
+    <!-- MODALS (RESTAURADO COMPLETO) -->
     <div id="privacyModal" class="modal fixed inset-0 z-50 bg-[#111827]/85 backdrop-blur-md justify-center items-center p-4">
         <div class="bg-white rounded-2xl w-full max-w-[800px] max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
             <div class="p-6 border-b flex justify-between items-center bg-gray-50">
                 <div class="flex items-center gap-3 text-gray-900"><i class="fa-solid fa-shield-halved text-brand-blue text-xl"></i><h3 class="font-extrabold text-xl tracking-tight">Privacy Policy</h3></div>
                 <button onclick="closeModals()" class="text-gray-400 hover:text-red-500 transition-all"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
-            <div class="p-6 md:p-8 overflow-y-auto text-gray-600 text-[15px] leading-relaxed">
-                <p>Your privacy is mandatory across all our operations.</p>
+            <div class="p-6 md:p-8 overflow-y-auto text-gray-600 text-[15px] leading-relaxed space-y-4">
+                <p>Your privacy is mandatory across all our operations aligned with European (GDPR), California (CCPA), and International General Laws.</p>
+                <p><strong>Article 1: Extracted Information</strong> - We use tracking tools (e.g., Google Analytics) to monitor anonymous metric traffic. Submissions involving Banking Data are encrypted through our official supplier.</p>
+                <p><strong>Article 2: Re-Marketing</strong> - Temporary cookies memorize your clicks to optimize digital advertising bids.</p>
             </div>
             <div class="p-4 bg-gray-50 border-t flex justify-end">
                 <button onclick="closeModals()" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-black transition">Understood</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="termsModal" class="modal fixed inset-0 z-50 bg-[#111827]/85 backdrop-blur-md justify-center items-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-[800px] max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-6 border-b flex justify-between items-center bg-gray-50">
+                <div class="flex items-center gap-3 text-gray-900"><i class="fa-solid fa-file-contract text-brand-blue text-xl"></i><h3 class="font-extrabold text-xl tracking-tight">Terms of Service</h3></div>
+                <button onclick="closeModals()" class="text-gray-400 hover:text-red-500 transition-all"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="p-6 md:p-8 overflow-y-auto text-gray-600 text-[15px] leading-relaxed">
+                <p>We act solely for the qualified transfer of information regarding Ryoko. All financial transactions redirect to the original producer, who holds all logistical legal burdens for freight or technical faults.</p>
+            </div>
+            <div class="p-4 bg-gray-50 border-t flex justify-end">
+                <button onclick="closeModals()" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-black transition">I Agree</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="returnsModal" class="modal fixed inset-0 z-50 bg-[#111827]/85 backdrop-blur-md justify-center items-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-[800px] max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-6 border-b flex justify-between items-center bg-gray-50">
+                <div class="flex items-center gap-3 text-gray-900"><i class="fa-solid fa-truck-fast text-brand-blue text-xl"></i><h3 class="font-extrabold text-xl tracking-tight">Returns Policy</h3></div>
+                <button onclick="closeModals()" class="text-gray-400 hover:text-red-500 transition-all"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="p-6 md:p-8 overflow-y-auto text-gray-600 text-[15px] leading-relaxed">
+                <p>We uphold international consumer policies by granting 30 Days tracked rigorously from the official physical delivery date. Returns must be communicated through verified support channels.</p>
+            </div>
+            <div class="p-4 bg-gray-50 border-t flex justify-end">
+                <button onclick="closeModals()" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-black transition">Go Back</button>
             </div>
         </div>
     </div>
@@ -549,26 +630,23 @@
     <script>
         const translations = {
             'pt': {
-                'bar_guarantee': '30 Dias de Garantia',
-                'bar_discount': '-70% de Desconto Hoje',
+                'bar_guarantee': '30 Dias de Garantia', 'bar_discount': '-70% de Desconto Hoje',
                 'nav_features': 'Recursos', 'nav_reviews': 'Avaliações', 'nav_faq': 'FAQ', 'cta_nav': 'Peça Agora!',
                 'hero_h1': 'Seu Mundo, Conectado pelo Wi-Fi Ryoko',
                 'hero_l1': 'Internet segura em qualquer lugar', 'hero_l2': 'Sem contratos', 'hero_l3': 'Sem taxas de roaming',
                 'cta_hero': 'Peça Agora!', 'review_num': '10.825', 'review_txt': 'Avaliações',
                 'sel_badge': 'Cobertura Premium', 'sel_h3': 'Selecione Seu Destino', 'sel_p': 'Garantimos entrega expressa e sinal otimizado para as seguintes regiões:',
                 'sig_active': 'Sinal Ativo', 'country_global': 'Global / Outros', 'sig_176': '176+ Países',
-                'feat_h2': 'Ryoko Tem Tudo', 'feat_p': 'Aperfeiçoamos nossa tecnologia. O Ryoko tem todos os recursos que você precisa.',
-                'f1_h4': 'Bloqueador de Anúncios', 'f1_p': 'Remove anúncios, bloqueia malware e sites de phishing.',
-                'f2_h4': 'Conecte 10 Dispositivos', 'f2_p': 'Compartilhe a conexão com amigos e familiares!',
-                'f3_h4': 'Cabe no seu Bolso', 'f3_p': 'Leve e portátil para levar em qualquer lugar.',
-                'f5_h4': 'Economia de Dados', 'f5_p': 'Otimização inteligente para máxima velocidade.',
-                'f6_h4': 'Bateria Longa', 'f6_p': 'Até 8 horas de uso ininterrupto.',
-                'f7_h4': 'Alta Velocidade', 'f7_p': 'Conexão de até 150Mb/s.',
-                'rev_badge': 'Mais Viagem, Menos Logística', 'rev_h2': 'Conexão para o Grupo Todo.',
+                'feat_h2': 'Ryoko Tem Tudo', 'feat_p': 'O Ryoko tem todos os recursos que você precisa para viajar com segurança.',
+                'f1_h4': 'Bloqueador', 'f1_p': 'Remove anúncios e bloqueia sites maliciosos.',
+                'f2_h4': '10 Dispositivos', 'f2_p': 'Compartilhe a conexão com toda a sua família!',
+                'f3_h4': 'Portátil', 'f3_p': 'Cabe no bolso e funciona em qualquer lugar.',
+                'f5_h4': 'Economia', 'f5_p': 'Otimização inteligente para máxima velocidade.',
+                'f6_h4': 'Bateria', 'f6_p': 'Até 8 horas de uso ininterrupto.',
+                'f7_h4': 'Velocidade', 'f7_p': 'Conexão estável de até 150Mb/s.',
+                'rev_badge': 'Diga adeus ao Roaming', 'rev_h2': 'Amado por Milhares',
                 'verified': 'Verificado', 'faq_h2': 'Perguntas Frequentes', 'cta_faq': 'PROTEGER MINHA VIAGEM AGORA',
-                'f_privacy': 'Política de Privacidade', 'f_terms': 'Termos de Serviço', 'f_refunds': 'Garantias',
-                'q1': '1. Por que o Ryoko é melhor que o hotspot do meu celular?',
-                'a1': 'Seu smartphone não foi projetado para ser um roteador contínuo. O Ryoko possui antenas potentes e bateria dedicada que preserva a vida útil do seu celular.'
+                'f_privacy': 'Política de Privacidade', 'f_terms': 'Termos de Serviço', 'f_refunds': 'Garantias'
             }
         };
 
